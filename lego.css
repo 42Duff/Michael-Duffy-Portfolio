@@ -1,0 +1,664 @@
+@font-face {
+    font-family: "Barmeno Bold";
+    src: url("fonts/barmeno-bold.woff2") format("woff2"),
+        url("fonts/barmeno-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Franklin Gothic Medium";
+    src: url("fonts/franklin-gothic-medium.woff2") format("woff2"),
+        url("fonts/franklin-gothic-medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: black;
+    pointer-events: auto;
+}
+
+.background-blur {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 900; /* below modal but above page */
+}
+
+.background-blur.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.introduction {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.linkedin {
+    position: absolute;
+    top: clamp(20px, 5vh, 60px);
+    left: clamp(20px, 5vw, 80px);
+    width: clamp(50px, 8vw, 100px);   
+    height: auto;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.headshot {
+    margin: 0 auto;
+    padding-top: clamp(40px, 10vh, 100px);
+    width: fit-content; 
+    pointer-events: auto;
+}
+
+.flip-container {
+    perspective: 1000px;
+    width: clamp(120px, 20vw, 200px);
+    height: clamp(120px, 20vw, 200px);
+    margin: 0 auto;
+  }
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.front img, .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.back {
+    transform: rotateY(180deg);
+}
+
+
+.github {
+    position: absolute;
+    top: clamp(20px, 5vh, 60px);
+    right: clamp(20px, 5vw, 80px);
+    width: clamp(50px, 8vw, 100px);  
+    height: auto;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.intro-text h1 {
+    font-family: "Franklin Gothic Medium", 'Nunito', sans-serif;
+    color: #FCC10B;
+    letter-spacing: clamp(1px, 0.4vw, 4px);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    width: fit-content;
+    margin: clamp(3px, 0.5vh, 5px) auto 0 auto; /* top margin + center */
+    text-align: center;
+}
+
+.resume {
+    text-align: center;
+    padding-top: 0.3em;
+}
+
+.resume-button {
+    font-family: 'Orbitron', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 4vw, 50px);
+    height: clamp(40px, 4vw, 50px);
+    background: 
+        linear-gradient(#000, #000) padding-box, /* button fill */
+        linear-gradient(135deg, #047df2 35%, #00ff66 65%) border-box; /* border gradient */
+    color: white;
+    border: clamp(1px, 0.3vw, 2px) solid transparent; /* must be transparent to show gradient */
+    border-radius: 50%;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    pointer-events: auto;
+    margin: 0 5px; /* space between buttons */
+}
+
+.resume-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.1);
+}
+
+.resume-button:active {
+    transform: scale(0.95);
+}
+
+.star-wars-crawl {
+    position: relative;
+    height: clamp(40vh, 50vh, 60vh);
+    overflow: hidden;
+    perspective: 1000px;
+    padding-top: clamp(20px, 5vh, 50px);
+}
+
+@media (max-height: 900px) {
+  .star-wars-crawl {
+    height: 47vh; /* smaller crawl box */
+  }
+}
+
+@media (max-height: 700px) {
+  .star-wars-crawl {
+    height: 45vh; /* smaller crawl box */
+  }
+}
+
+@media (max-height: 600px) {
+  .star-wars-crawl {
+    height: 35vh; /* smaller crawl box */
+  }
+}
+
+.star-wars-crawl h2 {
+    font-family: 'Orbitron', sans-serif !important;
+    color: #FCC10B;
+    font-size: clamp(1.3rem, 4vw, 3rem);
+    text-align: center;
+    transform-origin: bottom center;
+    animation: crawl 10s linear infinite;
+    font-weight: 700;
+}
+
+@keyframes crawl {
+    0% {
+        transform: rotateX(20deg) translateZ(0) translateY(50%);
+    }
+    100% {
+        transform: rotateX(25deg) translateZ(-300px) translateY(-100%);
+    }
+}
+
+.tech-section {
+    background-color: #000; /* pure black */
+    color: #fff;
+    padding: 50px 20px; /* adjust for spacing */
+    z-index: 1;
+}
+
+.tech-stack {
+    font-family: "Barmeno Bold", sans-serif;
+    color: #047df2;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding: 1.25rem 0;
+}
+
+.lego-playzone {
+    position: relative;
+    width: 60%;
+    height: 650px;
+    margin: 40px auto;
+    background-color: #111;
+    border: 1px solid #FCC10B;
+    overflow: hidden;
+}
+
+
+.lego-brick {
+    width: 190px;
+    position: absolute;
+    z-index: 1;
+    cursor: grab !important;
+    transition: filter 0.3s ease;
+    user-select: none;
+}
+
+.lego-brick:active {
+    cursor: grabbing !important;
+}
+
+
+/* Lift effect on hover */
+.lego-brick:hover {
+    transform: translateY(-10px);
+}
+
+/* Optional: brighten the color slightly on hover */
+.lego-brick.red:hover {
+    filter: brightness(1.2) drop-shadow(0 0 10px red);
+}
+
+.lego-brick.yellow:hover {
+    filter: brightness(1.2) drop-shadow(0 0 10px yellow);
+}
+
+.lego-brick.blue:hover {
+    filter: brightness(1.2) drop-shadow(0 0 10px #00bfff);
+}
+
+.lego-brick.green:hover {
+    filter: brightness(1.2) drop-shadow(0 0 10px limegreen);
+}
+
+.lego-menu {
+    position: absolute;
+    background: #000;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.lego-menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-20px); /* slide away a bit */
+}
+
+.lego-menu img {
+    width: 100px;
+    height: 34px;
+    cursor: grab !important;
+    background: #222;
+    border: 2px solid #444;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 20px; /* Match new menu top spacing */
+    left: 20px;
+    background: #111;
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.menu-brick {
+    transition: transform 0.2s ease;
+}
+.menu-brick:active {
+    transform: scale(1.05);
+    cursor: grabbing !important;
+}
+
+.project-section {
+    background-color: #000; /* pure black */
+    color: #fff;
+    padding: 50px 20px; /* adjust for spacing */
+    z-index: 1;
+}
+
+.projects {
+    font-family: "Barmeno Bold", sans-serif;
+    color: #047df2;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding: 1.25rem 0;
+}
+
+.project-grid {
+    display: grid;
+    gap: clamp(10px, 3vw, 25px);
+    justify-items: center;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* Default: mobile - 2 per row */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Tablet (≥768px) - 3 per row */
+@media (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop (≥1200px) - 4 per row */
+@media (min-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.project-bin {
+    position: relative;
+    width: clamp(125px, 18vw, 180px);
+    text-align: center;
+    cursor: pointer;
+    z-index: auto;
+}
+
+.bin-wrapper {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.6s ease-in-out, z-index 0s 0.6s;
+    z-index: 0;
+}
+
+.project-bin .bin {
+    width: 100%;
+    display: block;
+}
+
+.project-bin .lid {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    transform-origin: bottom center;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.project-bin:hover:not(.opened) {
+    transform: scale(1.05);
+}
+
+.project-bin:hover .lid {
+    transform: translateY(-16px) rotateX(-20deg);
+}
+
+/* disable hover on bin click */
+.project-bin.opened {
+  pointer-events: none;
+}
+
+/* only move bin-wrapper, not the whole project-bin */
+/* Base bin (default desktop setup) */
+/* Your original bin */
+.bin-wrapper.opened {
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(125px, 18vw, 180px);
+    z-index: 1200; /* clearer layering */
+}
+
+/* large ipad screens */
+@media (max-width: 1024px) and (min-height: 1000px) {
+  .bin-wrapper.opened {
+    bottom: 25vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .bin-wrapper.opened {
+    bottom: 20vh;
+  }
+}
+
+/* phone screens */
+@media (max-width: 450px) {
+  .bin-wrapper.opened {
+    bottom: 25vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .bin-wrapper.opened {
+    bottom: 1vh;
+  }
+}
+
+/* Bin shaking animation */
+@keyframes shake {
+    0% { transform: translateX(-50%) translateX(0); }
+    20% { transform: translateX(-50%) translateX(-2px); }
+    40% { transform: translateX(-50%) translateX(2px); }
+    60% { transform: translateX(-50%) translateX(-1px); }
+    80% { transform: translateX(-50%) translateX(1px); }
+    100% { transform: translateX(-50%) translateX(0); }
+}
+
+.bin-wrapper.shaking {
+    animation: shake 0.2s ease-in-out 4; /* 3 rapid shakes */
+}
+
+/* 🔹 Pop up (lid rises) */
+.lid.popping {
+    transform: translateY(-20px); /* adjust height */
+    opacity: 1;
+}
+
+/* 🔹 Disappears after pop */
+.lid.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 🔹 Returning (lid lowers back to bin) */
+.lid.returning {
+    transform: translateY(-10);
+    transition: transform 0.4s ease 0.2s; 
+    opacity: 1;
+}
+
+.project-name {
+    margin-top: -10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #fff;
+}
+
+/* Your original modal */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: flex-end; /* desktop default */
+    justify-content: center;
+    z-index: 1100;
+    padding-bottom: calc(5vh + 200px); /* space for bin */
+}
+
+.project-modal.active {
+    display: flex;
+}
+
+/* Modal content + beam effect */
+.modal-content {
+    position: relative;
+    background: rgba(0,0,0,0.8);
+    border: 2px solid #047df2;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+
+    width: 70vw;
+    max-width: 500px;
+    height: auto;
+    max-height: 80vh;     /* keeps it from overflowing the viewport */
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: rise 1.5s ease-out forwards;
+    box-shadow: 0 0 20px #047df2, 0 0 60px #047df2;
+    transform-origin: bottom center; /* animates from bin */
+    overflow: visible; /* so the beam can stick out */
+}
+
+/* Scale factor variable */
+:root {
+    --modal-scale: 1;
+}
+
+/* Adjust scale on smaller heights */
+@media (max-height: 800px) {
+    :root { --modal-scale: 0.9; }
+}
+@media (max-height: 700px) {
+    :root { --modal-scale: 0.8; }
+}
+@media (max-height: 600px) {
+    :root { --modal-scale: 0.65; }
+}
+
+@media (max-width: 1024px) and (min-height: 1000px) {
+  .project-modal {
+    padding-bottom: calc(4vh + 500px); /* smaller value raises modal */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-modal {
+    padding-bottom: calc(4vh + 300px); /* smaller value raises modal */
+  }
+}
+
+@media (max-width: 450px) {
+  .project-modal {
+    padding-bottom: calc(5vh + 300px); /* smaller value raises modal */
+  }
+}
+
+.modal-content h2 {
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    padding-bottom: 1em; 
+}
+
+.modal-content p {
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+}
+
+.modal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1.5vw, 1.25rem); /* gap scales */
+    margin-top: clamp(1rem, 2vh, 2rem);
+}
+
+.modal-btn {
+    border: 2px solid #FCC10B;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.5rem, 1.2vw, 1rem); /* scales text */
+    transition: background 0.2s ease;
+}
+
+.modal-btn:hover {
+    background: #e0a908;
+    transform: scale(1.05);
+}
+
+/* Rise animation now multiplies by --modal-scale */
+@keyframes rise {
+  from {
+    transform: translateY(25%) scale(calc(var(--modal-scale) * 0.9));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(var(--modal-scale));
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.experience {
+    font-family: "Barmeno Bold", sans-serif;
+    color: #047df2;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding: 1.25rem 0;
+}
+
+.site-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #FCC10B;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00ff66;
+}

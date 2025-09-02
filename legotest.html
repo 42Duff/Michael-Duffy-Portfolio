@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+        <title> Michael Duffy | Software Engineer & Fullstack Developer </title>
+          <!-- SEO Meta Description -->
+        <meta name="description" content="Portfolio of Michael Duffy, Software Engineer and Fullstack Developer. Showcasing fullstack projects, data science work, and interactive web apps.">
+        <!-- Keywords -->
+        <meta name="keywords" content="Michael Duffy, Software Engineer, Fullstack Developer, Portfolio, Web Development, Data Science">
+        <meta name="author" content="Michael Duffy">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/png" href="/assets/favicon.png">
+        <link rel = "stylesheet" href = "lego.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    </head>
+
+    <body>
+
+        <div class="background-blur"></div>
+
+        <header class = "introduction" >
+
+            <div id="particles-js"></div>
+
+            <a href="https://www.linkedin.com/in/michaelduffy24/" target="_blank">
+                <img src="assets/linkedinPFP.png" class="linkedin" alt="Michael Duffy LinkedIn Icon">
+            </a>
+
+            <div class="headshot">
+            <div class="flip-container">
+                <div class="flipper">
+                <div class="front">
+                    <img src="assets/normalpfp.png" alt="Michael Headshot">
+                </div>
+                <div class="back">
+                    <img src="assets/legopfpFinal.png" alt="LEGO Headshot">
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <a href="https://github.com/42Duff" target="_blank">
+                <img src="assets/github_PFP.png" class="github" alt="Michael Duffy GitHub Icon">
+            </a>
+
+            <div class="intro-text">
+                <h1> Michael Duffy </h1>
+            </div>
+
+            <div class="resume">
+                <a href="assets/MichaelDuffy-SEResume.pdf" class="resume-button" target="_blank">
+                    <i class="fa-solid fa-file"></i>
+                </a>
+                <a href="mailto:maduffy02@gmail.com" class="resume-button">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        
+            <div class="star-wars-crawl">
+                <h2> Software Engineer / Fullstack Developer
+                <br><br> Bachelors in Computer Information Systems
+                <br> From Notre Dame of Maryland University
+                <br> Based in Annapolis, MD
+                </h2>
+            </div>
+
+            <script>
+                particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+                console.log('particles.js loaded');
+            });
+            </script>
+
+        </header>
+
+        <main>
+
+            <section class = "tech-section" >
+                
+                <div class="tech-stack">
+                    <h2> Tech Stack </h2>
+                </div>
+
+                <div class="lego-playzone">
+                    <img src="assets/lego-python.svg" class="lego-brick red" alt="Python">
+                    <img src="assets/lego-java.svg" class="lego-brick yellow" alt="Java">
+                    <img src="assets/lego-c++.svg" class="lego-brick blue" alt="C++">
+                    <img src="assets/lego-mySQL.svg" class="lego-brick green" alt="MySQL">
+                    <img src="assets/lego-html.svg" class="lego-brick blue" alt="HTML">
+                    <img src="assets/lego-css.svg" class="lego-brick green" alt="CSS">
+                    <img src="assets/lego-node.svg" class="lego-brick yellow" alt="NodeJS">
+                    <img src="assets/lego-express.svg" class="lego-brick red" alt="ExpressJS">
+
+                    <div class="lego-menu" id="legoMenu">
+                        <img src="assets/4studbrick.svg" data-type="4" class="menu-brick" alt="4-stud brick">
+                        <img src="assets/3studbrick.svg" data-type="3" class="menu-brick" alt="3-stud brick">
+                        <img src="assets/2studbrick.svg" data-type="2" class="menu-brick" alt="2-stud brick">
+                        <img src="assets/1studbrick.svg" data-type="1" class="menu-brick" alt="1-stud brick">
+                    </div>
+                    <button class="menu-toggle" id="toggleMenu">Menu</button>
+                    
+                </div>
+
+            </section>
+
+            <section class = "project-section" >
+
+                <div class="projects">
+                    <h2> Projects </h2>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-bin" data-target="VictoryVerseModal">
+                        <div class="bin-wrapper">
+                            <img src="assets/VictoryVerseBrick.png" class="bin" alt="VictoryVerse Bin">
+                            <img src="assets/BrickBinLid.png" class="lid" alt="VictoryVerse Lid">
+                        </div>
+                        <p class="project-name">VictoryVerse</p>
+                    </div>
+                    
+                    <div class="project-bin" data-target="FoodTruckModal">
+                        <div class="bin-wrapper">
+                            <img src="assets/FoodTruckBrick.png" class="bin" alt="Food Truck Bin">
+                            <img src="assets/BrickBinLid.png" class="lid" alt="Food Truck Lid">
+                        </div>
+                        <p class="project-name">Soul y Sazon</p>
+                    </div>
+
+                    <div class="project-bin" data-target="HangmanModal">
+                        <div class="bin-wrapper">
+                            <img src="assets/HangmanBrick.png" class="bin" alt="Hangman Bin">
+                            <img src="assets/BrickBinLid.png" class="lid" alt="Hangman Lid">
+                        </div>
+                        <p class="project-name">Hangman Game</p>
+                    </div>
+
+                    <div class="project-bin" data-target ="AppleMusicModal">
+                        <div class="bin-wrapper">
+                            <img src="assets/AppleMusicBrick.png" class="bin" alt="Apple Music Bin">
+                            <img src="assets/BrickBinLid.png" class="lid" alt="Apple Music Lid">
+                        </div>
+                        <p class="project-name">Apple Music Churn Prediction</p>
+                    </div>
+                </div>
+
+                <!-- modal for projects -->
+                <div id="VictoryVerseModal" class="project-modal">
+                    <div class="modal-content">
+                        <button class="close-modal">&times;</button>
+                        <h2>VictoryVerse</h2>
+                        <img src="assets/VictoryVerse.png" class="VictoryVerse img" alt="VictoryVerse Home Screen" >
+                        <p>A fullstack web app for gamers where users can create accounts, upload custom profile images and banners, and access exclusive features.
+                        The site includes dynamically scraped leaderboards and gaming news, built with Node.js, Express, and MySQL.</p>
+                        <div class="modal-buttons">
+                            <a href="https://github.com/42Duff/VictoryVerse" target="_blank" class="modal-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://victoryverse-demo.com" target="_blank" class="modal-btn">
+                                🚀 Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="FoodTruckModal" class="project-modal">
+                    <div class="modal-content">
+                        <button class="close-modal">&times;</button>
+                        <h2>Soul y Sazon</h2>
+                        <img src="assets/foodtruck.png" class="SoulySazon img" alt="SoulySazon Home Screen" >
+                        <p>A basic website for a mock foodtruck business. Created with vanilla HTML and CSS.</p>
+                        <div class="modal-buttons">
+                            <a href="https://github.com/42Duff/Soul-y-Sazon" target="_blank" class="modal-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://Soul-y-Sazon-demo.com" target="_blank" class="modal-btn">
+                                🚀 Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="HangmanModal" class="project-modal">
+                    <div class="modal-content">
+                        <button class="close-modal">&times;</button>
+                        <h2>Hangman Game</h2>
+                        <img src="assets/Hangman.png" class="Hangman img" alt="Hangman Home Screen" >
+                        <p>A classic Hangman word-guessing game built as a final project for the Intro to Python class. Includes a graphical interface that updates as the user plays.</p>
+                        <div class="modal-buttons">
+                            <a href="https://github.com/42Duff/Simple-Hangman-Game" target="_blank" class="modal-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://hangman-game-demo.com" target="_blank" class="modal-btn">
+                                🚀 Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="AppleMusicModal" class="project-modal">
+                    <div class="modal-content">
+                        <button class="close-modal">&times;</button>
+                        <h2>Apple Music Churn Prediction</h2>
+                        <img src="assets/AppleMusicChurn.png" class="AppleMusicChurn img" alt="AppleMusicChurn Home Screen" >
+                        <p>A machine learning-based analytics system designed to predict subscription churn for Apple Music. 
+                            Built with Python, Pandas, Scikit-learn, and Matplotlib, featuring logistic regression and decision tree models. 
+                            Delivered actionable insights through data preprocessing, feature engineering, and accuracy evaluation.</p>
+                        <div class="modal-buttons">
+                            <a href="https://github.com/42Duff/Predicting-User-Churn-in-Apple-Music" target="_blank" class="modal-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://AppleMusicChurn-demo.com" target="_blank" class="modal-btn">
+                                🚀 Presentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience">
+                    <h2> Experience</h2>
+                </div>
+
+                <!-- Toggle Buttons -->
+                <div
+                    class="max-w-6xl mx-auto h-9 items-center justify-center rounded-lg bg-neutral-950/30 text-muted-foreground mb-2 grid grid-cols-2"
+                    role="tablist"
+                    aria-orientation="horizontal">
+                    
+                    <button id="studiesTab"
+                        class="tab-button inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all bg-[#FCC10B] text-black shadow"
+                        data-target="studies"
+                        aria-selected="true">
+                        Studies
+                    </button>
+                    
+                    <button id="workTab"
+                        class="tab-button inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all text-neutral-300"
+                        data-target="work"
+                        aria-selected="false">
+                        Work
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="max-w-6xl mx-auto mt-2 border border-[#FCC10B] rounded-lg">
+                    
+                    <!-- Studies Panel (Initially Visible) -->
+                    <ul id="studiesPanel" class="experience-panel ml-10 border-l border-neutral-300 list-none">
+                        <li class="relative ml-10 pr-2 py-4">
+                            <div class="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white">
+                                <img src="assets/ndmu_logo.png" alt="NDMU" class="rounded-full w-12 h-12">
+                            </div>
+
+                            <div class="flex flex-col gap-1 text-white">
+                                <time class="text-xs text-gray-400">2023 - 2025</time>
+                                <h2 class="font-semibold leading-none">Notre Dame of Maryland University</h2>
+                                <p class="text-sm text-gray-400">B.A. Computer Information Systems</p>
+                            </div>
+
+                        </li>
+                        <li class="relative ml-10 pr-2 py-4">
+                            <div class="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white">
+                                <img src="assets/aacc_logo.png" alt="AACC" class="rounded-full w-12 h-12">
+                            </div>
+
+                            <div class="flex flex-col gap-1 text-white">
+                                <time class="text-xs text-gray-400">2020 - 2023</time>
+                                <h2 class="font-semibold leading-none">Anne Arundel Community College</h2>
+                                <p class="text-sm text-gray-400">A.A Psychology</p>
+                            </div>                          
+                        </li>
+                    </ul>
+
+                    <!-- Work Panel (Initially Hidden) -->
+                    <ul id="workPanel" class="experience-panel ml-10 border-l border-neutral-300 list-none hidden">
+                        <li class="relative ml-10 pr-2 py-4">
+                            <div class="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white">
+                                <img src="assets/sadface.png" alt="Digital Perspective" class="rounded-full w-12 h-12">
+                            </div>
+                            <div class="flex flex-col gap-1 text-white">
+                                <time class="text-xs text-gray-400"></time>
+                                <h2 class="font-semibold leading-none">Nothing Yet...</h2>
+                                <p class="text-sm text-gray-400"></p>
+                                <p class="text-sm">Help add to this area by contacting me below!</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2025 Michael Duffy</p>
+                <div class="social-links">
+                <a href="https://www.linkedin.com/in/michaelduffy24/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/42Duff" target="_blank">GitHub</a>
+                <a href="mailto:maduffy02@gmail.com">Email</a>
+                </div>
+            </div>
+        </footer>
+
+    <script src="js/lego.js"></script>
+    <script src="js/project-bin.js"></script>
+    <script src="js/experience-tabs.js"></script>    
+
+    </body>
+</html>
